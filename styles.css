@@ -1,17 +1,108 @@
 /* Google Font CDN Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap');
 
 html {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    background: #c9ced3;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.calculator {
+    width: 400px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 30px -5px whitesmoke;
+}
+
+.calculator-display {
+    background: black;
+    color: white;
     display: flex;
     align-items: center;
-    justify-content: center;
-    letter-spacing: 2px;
+    justify-content: flex-end;
+    border-radius: 10px 10px 0 0;
     margin: 0;
+}
+
+.calculator-display h1 {
+    font-size: 35px;
+    font-weight: 200;
+    padding: 25px;
+    margin: 0;
+    overflow-x: auto;
+}
+
+/* Buttons */
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+button {
+    min-height: 50px;
+    background-color: #d6dddd8c;
+    font-size: 20px;
+    font-weight: 400;
+    font-family: inherit;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+button:hover{
+    filter: brightness(90%);
+}
+
+button:active{
+    transform: translateY(1px);
+}
+
+.operator{
+    color: white;
+    font-size: 30px;
+    background-color: cornflowerblue;
+}
+
+
+.equal-sign {
+    grid-column: -2;
+    grid-row: 2 /span 4;
+    background-color: #21ad4bb3;
+}
+
+.clear{
+    color: white;
+    background: rgba(243, 43, 43, 0.842);
+}
+
+/* custom ScrollBar */
+::-webkit-scrollbar {
+    height: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(233, 227, 227);
+}
+
+::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
+}
+
+/* Media Querries */
+@media screen and (max-width : 600px){
+    .calculator{
+        width: 95%;
+    }
 }
